@@ -1,5 +1,6 @@
 from __future__ import division
-import cPickle as pickle
+#import cPickle as pickle
+import pickle as pickle
 import csv
 import numpy as np
 import sys
@@ -30,7 +31,7 @@ def dict_to_list(data_dict):
     return data_list
 
 def dictToFile(dict,path):
-    print "Writing to {}".format(path)
+    print("Writing to {}".format(path))
     with gzip.open(path, 'w') as f:
         f.write(json.dumps(dict))
 
@@ -40,7 +41,7 @@ def dictFromFileUnicode(path):
     key ->  unicode keys
     string values -> unicode value
     '''
-    print "Loading {}".format(path)
+    print("Loading {}".format(path))
     with gzip.open(path, 'r') as f:
         return json.loads(f.read())
 
