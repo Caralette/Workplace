@@ -17,7 +17,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.cudnn_rnn.ops import gen_cudnn_rnn_ops
+#from tensorflow.contrib.cudnn_rnn.ops import gen_cudnn_rnn_ops
 # from tensorflow.contrib.cudnn_rnn_ops import cudnn_rnn_canonical_to_opaque_params
 from tensorflow.contrib.rnn.python.ops import lstm_ops
 from tensorflow.contrib.util import loader
@@ -204,26 +204,26 @@ class _CudnnRNN(object):
         dropout=self._dropout,
         seed=self._seed)
 
-  def canonical_to_params(self, weights, biases):
-    """Converts params from the canonical format to a specific format of cuDNN.
+  # def canonical_to_params(self, weights, biases):
+  #   """Converts params from the canonical format to a specific format of cuDNN.
 
-    Args:
-      weights: a Tensor for weight parameters.
-      biases: a Tensor for bias parameters.
+  #   Args:
+  #     weights: a Tensor for weight parameters.
+  #     biases: a Tensor for bias parameters.
 
-    Returns:
-      A function for the canonical-to-params-to-specific conversion..
-    """
+  #   Returns:
+  #     A function for the canonical-to-params-to-specific conversion..
+  #   """
 
-    return gen_cudnn_rnn_ops.cudnn_rnn_canonical_to_params(
-      num_layers=self._num_layers,
-      num_units=self._num_units,
-      input_size=self._input_size,
-      weights=weights,
-      biases=biases,
-      rnn_mode=self._rnn_mode,
-      input_mode=self._input_mode,
-      direction=self._direction)
+  #   return gen_cudnn_rnn_ops.cudnn_rnn_canonical_to_params(
+  #     num_layers=self._num_layers,
+  #     num_units=self._num_units,
+  #     input_size=self._input_size,
+  #     weights=weights,
+  #     biases=biases,
+  #     rnn_mode=self._rnn_mode,
+  #     input_mode=self._input_mode,
+  #     direction=self._direction)
 
 def _check_rnn_mode(rnn_mode):
   if rnn_mode not in (CUDNN_LSTM, CUDNN_GRU, CUDNN_RNN_TANH, CUDNN_RNN_RELU):

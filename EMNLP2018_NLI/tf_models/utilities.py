@@ -1,5 +1,6 @@
-import cPickle as pickle
-import hickle
+#import cPickle as pickle
+import pickle as pickle
+#import hickle
 import numpy as np
 
 from tensorflow.python.ops import control_flow_ops
@@ -10,10 +11,10 @@ from tensorflow.python.training import optimizer
 
 import tensorflow as tf
 
-def load_pickle(fin):
-	with open(fin,'r') as f:
-		obj = hickle.load(f)
-	return obj
+# def load_pickle(fin):
+# 	with open(fin,'r') as f:
+# 		obj = hickle.load(f)
+# 	return obj
 
 def variable_summaries(var):
   """Attach a lot of summaries to a Tensor (for TensorBoard visualization)."""

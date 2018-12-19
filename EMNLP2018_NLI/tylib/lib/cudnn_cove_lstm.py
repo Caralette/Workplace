@@ -6,7 +6,7 @@ import numpy as np
 import operator
 import os
 import tensorflow as tf
-import cudnn_rnn_ops as old_cudnn
+import tylib.lib.cudnn_rnn_ops as old_cudnn
 
 """ Constructs a Cudnn Cove LSTM, Loading
 weights from CovE model.

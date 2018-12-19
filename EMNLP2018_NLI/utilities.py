@@ -5,7 +5,7 @@ import csv
 import numpy as np
 import sys
 import os
-import cPickle as pickle
+#import cPickle as pickle
 from nltk.corpus import stopwords
 import json
 import gzip

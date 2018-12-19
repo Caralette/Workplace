@@ -24,7 +24,8 @@ import tensorflow as tf
 import sys
 from sklearn.utils import shuffle
 from collections import Counter
-import cPickle as pickle
+#import cPickle as pickle
+import pickle as pickle
 from keras.utils import np_utils
 from tf_models.model import Model
 import string
@@ -41,8 +42,8 @@ from tylib.exp.exp_ops import *
 from tylib.exp.tuning import *
 from parser import *
 
-reload(sys)
-sys.setdefaultencoding('UTF8')
+# reload(sys)
+# sys.setdefaultencoding('UTF8')
 
 def batchify(data, i, bsz, max_sample):
     start = int(i * bsz)

@@ -37,8 +37,8 @@ import string
 
 from collections import defaultdict
 
-reload(sys)
-sys.setdefaultencoding('UTF8')
+# reload(sys)
+# sys.setdefaultencoding('UTF8')
 
 class Experiment(object):
     ''' Implements a base experiment class for TensorFLow
