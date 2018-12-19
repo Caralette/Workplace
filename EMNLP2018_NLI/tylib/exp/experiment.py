@@ -37,6 +37,9 @@ import string
 
 from collections import defaultdict
 
+###############################
+from functools import cmp_to_key
+
 # reload(sys)
 # sys.setdefaultencoding('UTF8')
 
@@ -259,9 +262,14 @@ class Experiment(object):
                 if(len(_val)==0):
                     continue
                 primary_metrics.append([key, _val[0]])
+                print("_val[0]",_val[0])
 
+            # sorted_metrics = sorted(primary_metrics,
+            #                         key=operator.itemgetter(1),
+            #                             reverse=reverse)
+            print("primary_metrics",primary_metrics)
             sorted_metrics = sorted(primary_metrics,
-                                    key=operator.itemgetter(1),
+                                    key=lambda x :x[1]["val"],
                                         reverse=reverse)
             cur_dev_score = primary_metrics[-1][1]['val']
             best_epoch = sorted_metrics[0][0]

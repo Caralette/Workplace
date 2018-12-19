@@ -310,7 +310,7 @@ class NLIExperiment(Experiment):
         # label always last
         output.append(label)
 
-        output = zip(*output)
+        output = list(zip(*output))
 
         original_len = len(output)
         output = [x for x in output if x[1]>0 and x[3]>0]

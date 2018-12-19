@@ -75,7 +75,7 @@ class Model:
 
     def _get_pair_feed_dict(self, data, mode='training', lr=None):
         # print(data[0])
-        data = zip(*data)
+        data = list(zip(*data))
         labels = data[-1]
 
         if(lr is None):
@@ -131,7 +131,7 @@ class Model:
 
     def _get_point_feed_dict(self, data, mode='training', lr=None):
         # print(data[0])
-        data = zip(*data)
+        data = list(zip(*data))
 
         labels = data[-1]
         if(self.args.dataset=='SICK'):
@@ -1152,7 +1152,7 @@ class Model:
                     tvars = tf.trainable_variables()
                     def _none_to_zero(grads, var_list):
                         return [grad if grad is not None else tf.zeros_like(var)
-                              for var, grad in zip(var_list, grads)]
+                              for var, grad in list(zip(var_list, grads))]
                     if(self.args.clip_norm>0):
                         grads, _ = tf.clip_by_global_norm(
                                         tf.gradients(self.cost, tvars),
