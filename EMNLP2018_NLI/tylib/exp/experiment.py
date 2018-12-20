@@ -297,8 +297,10 @@ class Experiment(object):
         # if(len(primary_metrics)==0):
         #     return False
 
-        sorted_test = sorted(test_metrics, key=operator.itemgetter(1),
-                                    reverse=reverse)
+        # sorted_test = sorted(test_metrics, key=operator.itemgetter(1),
+        #                             reverse=reverse)
+        print("test_metrics",test_metrics)
+        sorted_test = sorted(test_metrics,key=lambda x :x[1]["val"],reverse=reverse)
 
         max_epoch = sorted_test[0][0]
 
